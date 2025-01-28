@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #282c34, #2c7a7b);
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+#container{
+    width: 500px;
+    min-height: min-content;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time-info{
+    color: #333333;
+    width: 100%;
+    height: min-content;
+    margin-bottom: 10px;
+    padding: 0 5px 15px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+#search-bar{
+    width: 100%;
+    height: min-content;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#city-input{
+    width: 85%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 2px solid #0078d7;
+    background: transparent;
+}
+
+#city-input::placeholder {
+    color: var(--placeholder-color, #aaa)
+}
+
+#city-input:focus {
+    border-color: #0078d7;
+    box-shadow: 0 2px 8px rgba(0, 120, 215, 0.2);
+}
+
+#searchButton {
+    padding: 10px 12px;
+    color: #fff;
+    background-color:#5794d1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background: #ababab;
+}
+
+#weather-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 20px;
+    text-align: center;
+    position: relative;
+    text-transform: capitalize;
+}
+
+/* CSS for loader */
+#loader {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation for loader spinning */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* CSS for smooth fade-in of the weather box */
+#weather-box {
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#weather-box.show {
+    display: block;
+    opacity: 1;
+}
+
+/*to show updated image according to weather description*/
+#weather-description-image {
+    display: block;
+}
+
+.city-details{
+    width: 100%;
+    height: min-content;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#city-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weather-img{
+    margin-block: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.temperature-description{
+    width: 100%;
+    color: #000;
+    height: min-content;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.weather-description-image{
+    width: 100%;
+    color: #000;
+    height: min-content;
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.weather-detail{
+    color: #000;
+    width: 100%;
+    height: min-content;
+    font-size: 18px;
+    font-weight: 700;
+    margin-block: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#humidity, #wind-speed{
+    display: flex;
+    align-items: center;
+}
+
+.humidity{
+    margin-left: 15px;
+}
+
+.wind{
+    margin-right: 15px;
+}
+
+/*aligning the temperature icon and text*/
+#temperature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+/*aligning dayOrNight icon and text*/
+#description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    gap: 0.5em;
+}
+
+/*error case div design*/
+#error-case{
+    height: min-content;
+    width: 100%;
+}
+
+#error-case p{
+    max-width: fit-content;
+    font-size: 1.9rem;
+    text-align: center;
+    color: #C0392B;
+    background-color: #e2dfdf;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#error-case img{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}

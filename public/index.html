@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <div class="time-info">
+                <h2 id="time-information"></h2>
+            </div>
+            <div id="search-bar">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="searchButton"><img src="/assets/search.svg" alt="search-icon"></button>   
+            </div>
+        </div>
+
+        <!--Adding this image as a placeholder image-->
+        <div id="weather-img">
+            <img src="/assets/climate.svg" alt="climate-change">
+        </div>
+
+        <div id="weather-box">
+            <div id="loader" class="loader"></div>
+
+            <div class="city-details">
+                <h3 id="city-name"><!--Location:--></h3>
+            </div>
+
+            <div id="weather-description-image"></div>
+
+            <div class="temperature-description">
+                <p id="temperature"><!--0 °C--></p>
+                <p id="description">clear bright day</p>
+            </div>
+
+            <div class="weather-detail">
+                <div id="humidity">
+                    <p>45%</p>
+                </div>
+    
+                <div id="wind-speed">
+                    <p>12Km/Hr</p>  
+                </div>
+            </div>
+            
+        </div>
+        <div id="error-case"></div>
+    </div>
+</body>
+<script src="/script.js"></script>
+</html>
